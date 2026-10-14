@@ -14,7 +14,7 @@ Técnico o docente responsable de los equipos del laboratorio.
 - Listar equipos
 - Buscar equipo por código
 - Modificar estado
--Eliminar un equipo del registro de forma definitiva
+- Eliminar un equipo del registro de forma definitiva
 - Salir
 
 ## 5. Información de los equipos
