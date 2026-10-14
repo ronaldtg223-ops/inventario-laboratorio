@@ -42,3 +42,8 @@
 2. Indicar qué archivo y qué función se va a modificar.
 3. Indicar qué reglas de este archivo se van a aplicar.
 4. Recién después escribir el código.
+
+## 9. Documentación
+- Toda función debe tener un docstring en español, entre triples comillas dobles, justo debajo de la línea def.
+- El docstring debe tener varias líneas con este formato: primero una descripción breve de lo que hace la función, luego una sección "Parámetros:" que explique cada parámetro, y al final una sección "Retorna:" que indique qué devuelve.
+- Los comentarios dentro del código deben explicar el porqué de una acción, no repetir lo que ya dice el código.
