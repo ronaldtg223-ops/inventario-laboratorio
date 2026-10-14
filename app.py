@@ -1,0 +1,1 @@
+# Punto de entrada del Sistema de Inventario de Laboratorio

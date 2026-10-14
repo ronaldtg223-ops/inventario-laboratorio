@@ -1,0 +1,1 @@
+# Lógica del inventario de equipos del laboratorio
