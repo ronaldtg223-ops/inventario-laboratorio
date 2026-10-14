@@ -92,3 +92,44 @@ def registrar_equipo(codigo=None, nombre=None, tipo=None, estado=None, ubicacion
 
     print(f"Equipo '{nombre}' registrado exitosamente.")
     return nuevo_equipo
+
+
+def buscar_equipo(codigo=None):
+    """
+    Busca un equipo en el inventario a partir de su código único.
+
+    Parámetros:
+    codigo (str, opcional): Código del equipo a buscar. Si no se proporciona,
+        se solicita al usuario por consola.
+
+    Retorna:
+    dict: Diccionario con los datos del equipo si se encuentra, o None si no
+        existe o si la entrada es inválida.
+    """
+    # Se solicita el código de forma interactiva para permitir el uso directo desde el menú de la aplicación
+    if codigo is None:
+        codigo = input("Ingrese el código del equipo a buscar: ").strip()
+    else:
+        codigo = str(codigo).strip()
+
+    # Se valida que el código no esté vacío para evitar búsquedas inválidas
+    if not codigo:
+        print("Error: El código es obligatorio.")
+        return None
+
+    # Se consulta la lista actualizada para verificar la existencia del equipo en los datos vigentes
+    equipos = cargar_equipos()
+    for equipo in equipos:
+        if equipo.get("codigo") == codigo:
+            # Se presenta la información completa para facilitar la visualización al usuario
+            print("\nEquipo encontrado:")
+            print(f"Código: {equipo.get('codigo')}")
+            print(f"Nombre: {equipo.get('nombre')}")
+            print(f"Tipo: {equipo.get('tipo')}")
+            print(f"Estado: {equipo.get('estado')}")
+            print(f"Ubicación: {equipo.get('ubicacion')}")
+            return equipo
+
+    # Se notifica la inexistencia del registro para informar con claridad al usuario
+    print(f"Error: No se encontró ningún equipo con el código '{codigo}'.")
+    return None
